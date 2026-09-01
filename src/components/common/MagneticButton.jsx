@@ -5,6 +5,7 @@ import { useSoundEffects } from "../../hooks/useSoundEffects";
 export default function MagneticButton({
   children,
   className = "",
+  wrapperClassName = "",
   variant = "primary", // primary, secondary, outline, ghost
   onClick,
   href,
@@ -62,7 +63,7 @@ export default function MagneticButton({
       onMouseLeave={handleMouseLeave}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 250, damping: 18, mass: 0.1 }}
-      className="inline-block"
+      className={`inline-block ${wrapperClassName}`}
     >
       <Component
         onMouseEnter={playHover}

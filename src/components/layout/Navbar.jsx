@@ -106,59 +106,44 @@ export default function Navbar({ onOpenMenu, onOpenTrial, onOpenCalculator }) {
           })}
         </nav>
 
-        {/* Right Actions: Quick Join (Mobile), Calculator, Sound, Join CTA (Desktop), Hamburger Menu */}
-        <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
-          {/* Mobile Quick VIP Join Pill */}
-          <button
-            onClick={onOpenTrial}
-            onMouseEnter={playHover}
-            aria-label="Join VIP Trial"
-            className="sm:hidden flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#E2FF00] text-black font-mono-tech text-[10px] font-black uppercase tracking-wider shadow-[0_0_10px_rgba(226,255,0,0.35)] active:scale-95 transition-all cursor-pointer"
-          >
-            <Sparkles className="w-3 h-3" />
-            <span>JOIN</span>
-          </button>
+        {/* Right Actions: Sound Toggle, Calculator (Desktop), Join CTA (Desktop/Tablet), Hamburger Menu (All screens) */}
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          {/* Sound Toggle */}
+          <SoundToggle />
 
-          {/* Fitness Calculator Trigger (Desktop/Tablet) */}
+          {/* Fitness Calculator Trigger (Desktop only) */}
           <button
             onClick={onOpenCalculator}
             onMouseEnter={playHover}
             aria-label="Open Fitness Calculators"
-            className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-full bg-white/5 border border-white/10 hover:border-[#00F0FF]/50 text-xs font-mono-tech text-zinc-300 hover:text-[#00F0FF] transition-all cursor-pointer"
+            className="hidden lg:flex items-center gap-2 px-3 py-2 rounded-full bg-white/5 border border-white/10 hover:border-[#00F0FF]/50 text-xs font-mono-tech text-zinc-300 hover:text-[#00F0FF] transition-all cursor-pointer"
           >
             <Calculator className="w-3.5 h-3.5 text-[#00F0FF]" />
             <span className="hidden xl:inline">1RM & MACROS</span>
           </button>
 
-          {/* Sound Toggle (Available on all devices) */}
-          <div className="shrink-0">
-            <SoundToggle />
-          </div>
-
-          {/* Primary CTA (Desktop/Tablet) */}
+          {/* Primary CTA (Desktop and Tablet only - Single instance, never duplicated) */}
           <MagneticButton
             onClick={onOpenTrial}
             variant="primary"
             size="sm"
-            className="hidden sm:inline-flex"
+            wrapperClassName="hidden md:inline-block"
           >
             <Sparkles className="w-3.5 h-3.5" />
             <span>JOIN NOW</span>
           </MagneticButton>
 
-          {/* High-Tech Hamburger Menu Trigger Button */}
+          {/* High-Tech Hamburger Menu Button (Always visible on Mobile, Tablet & Desktop) */}
           <button
             onClick={onOpenMenu}
             onMouseEnter={playHover}
             aria-label="Open Navigation Menu"
-            className="group flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-zinc-900/90 hover:bg-zinc-800/90 border border-white/15 hover:border-[#E2FF00] text-white hover:text-[#E2FF00] shadow-[0_2px_10px_rgba(0,0,0,0.5)] active:scale-95 transition-all duration-300 cursor-pointer"
+            className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-zinc-900 hover:bg-zinc-800 border border-white/20 hover:border-[#E2FF00] text-white hover:text-[#E2FF00] shadow-[0_2px_12px_rgba(0,0,0,0.6)] active:scale-95 transition-all duration-300 cursor-pointer"
           >
-            <span className="text-[11px] sm:text-xs font-mono-tech uppercase tracking-wider font-bold text-zinc-200 group-hover:text-[#E2FF00] transition-colors">
+            <span className="text-xs font-mono-tech uppercase tracking-wider font-bold text-zinc-200">
               MENU
             </span>
-            <div className="w-6 h-6 rounded-full bg-white/5 group-hover:bg-[#E2FF00]/10 flex items-center justify-center transition-colors">
-              <Menu className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E2FF00] transition-transform duration-300 group-hover:scale-110" />
-            </div>
+            <Menu className="w-4 h-4 text-[#E2FF00]" />
           </button>
         </div>
       </div>
