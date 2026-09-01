@@ -45,21 +45,21 @@ export default function FullscreenMenu({ isOpen, onClose, onOpenTrial }) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4 }}
-        className="fixed inset-0 z-50 bg-[#050505] text-white flex flex-col justify-between overflow-y-auto px-6 py-6 sm:px-12 md:py-10"
+        className="fixed inset-0 z-50 bg-[#050505] text-white flex flex-col justify-between overflow-y-auto px-4 py-5 sm:px-10 md:px-12 sm:py-8 md:py-10"
       >
         {/* Top bar inside menu */}
-        <div className="flex items-center justify-between border-b border-zinc-800/80 pb-6">
+        <div className="flex items-center justify-between border-b border-zinc-800/80 pb-4 sm:pb-6">
           <Link
             to="/"
             onClick={() => { playClick(); onClose(); }}
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-2.5 sm:gap-3 group"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#00F0FF] to-[#E2FF00] p-0.5 flex items-center justify-center shadow-[0_0_20px_rgba(226,255,0,0.3)]">
-              <div className="w-full h-full bg-[#050505] rounded-[10px] flex items-center justify-center font-display font-black text-xl text-[#E2FF00]">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-tr from-[#00F0FF] to-[#E2FF00] p-0.5 flex items-center justify-center shadow-[0_0_20px_rgba(226,255,0,0.3)]">
+              <div className="w-full h-full bg-[#050505] rounded-[6px] sm:rounded-[10px] flex items-center justify-center font-display font-black text-base sm:text-xl text-[#E2FF00]">
                 V
               </div>
             </div>
-            <span className="font-display font-black text-2xl tracking-tight text-white group-hover:text-[#E2FF00] transition-colors">
+            <span className="font-display font-black text-xl sm:text-2xl tracking-tight text-white group-hover:text-[#E2FF00] transition-colors">
               VYRON<span className="text-[#E2FF00]">.</span>
             </span>
           </Link>
@@ -79,15 +79,15 @@ export default function FullscreenMenu({ isOpen, onClose, onOpenTrial }) {
           {/* Close button */}
           <button
             onClick={() => { playClick(); onClose(); }}
-            className="group flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 hover:border-[#E2FF00] bg-white/5 hover:bg-[#E2FF00]/10 text-white hover:text-[#E2FF00] transition-all duration-300 cursor-pointer"
+            className="group flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/20 hover:border-[#E2FF00] bg-zinc-900/90 hover:bg-[#E2FF00]/10 text-white hover:text-[#E2FF00] transition-all duration-300 cursor-pointer"
           >
-            <span className="text-xs font-mono-tech uppercase tracking-wider font-bold">CLOSE</span>
+            <span className="text-[11px] sm:text-xs font-mono-tech uppercase tracking-wider font-bold">CLOSE</span>
             <X className="w-4 h-4 transition-transform group-hover:rotate-90" />
           </button>
         </div>
 
         {/* Main Content: Links Grid + Preview Image */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 my-auto py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 my-auto py-5 sm:py-8">
           {/* Links Column */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-1 sm:space-y-2">
             {menuItems.map((item, index) => {
@@ -95,9 +95,9 @@ export default function FullscreenMenu({ isOpen, onClose, onOpenTrial }) {
               return (
                 <motion.div
                   key={item.path}
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.04, duration: 0.4 }}
+                  transition={{ delay: index * 0.03, duration: 0.35 }}
                 >
                   <Link
                     to={item.path}
@@ -109,17 +109,17 @@ export default function FullscreenMenu({ isOpen, onClose, onOpenTrial }) {
                       playClick();
                       onClose();
                     }}
-                    className="group flex items-baseline gap-4 py-1.5 transition-all duration-300"
+                    className="group flex items-baseline gap-3 sm:gap-4 py-1 sm:py-1.5 transition-all duration-300"
                   >
-                    <span className="font-mono-tech text-xs text-zinc-500 group-hover:text-[#E2FF00] transition-colors w-6">
+                    <span className="font-mono-tech text-[10px] sm:text-xs text-zinc-500 group-hover:text-[#E2FF00] transition-colors w-5 sm:w-6 shrink-0">
                       {item.number}
                     </span>
-                    <span className={`font-display text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight transition-all duration-300 ${
-                      isActive ? "text-[#E2FF00] pl-3" : "text-zinc-300 group-hover:text-white group-hover:pl-3"
+                    <span className={`font-display text-xl sm:text-3xl md:text-5xl font-black uppercase tracking-tight transition-all duration-300 ${
+                      isActive ? "text-[#E2FF00] pl-2 sm:pl-3" : "text-zinc-300 group-hover:text-white group-hover:pl-2 sm:group-hover:pl-3"
                     }`}>
                       {item.title}
                     </span>
-                    <ArrowUpRight className="w-5 h-5 text-zinc-600 opacity-0 group-hover:opacity-100 group-hover:text-[#E2FF00] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                    <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-600 opacity-0 group-hover:opacity-100 group-hover:text-[#E2FF00] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                   </Link>
                 </motion.div>
               );
