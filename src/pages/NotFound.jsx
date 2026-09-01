@@ -34,7 +34,7 @@ export default function NotFound() {
           <Link to="/">
             <MagneticButton variant="primary" size="lg">
               <Home className="w-4 h-4 mr-1" />
-              Return to Flagship Home
+              Return to Home
             </MagneticButton>
           </Link>
           <Link to="/programs">

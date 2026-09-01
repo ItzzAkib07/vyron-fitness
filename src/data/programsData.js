@@ -211,7 +211,7 @@ export const programsData = [
     image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1200&auto=format&fit=crop",
     secondaryImage: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1200&auto=format&fit=crop",
     shortDesc: "Dedicated biomechanical programming, bi-weekly InBody body-composition scans, custom macro planning, and 24/7 coach direct access.",
-    fullDesc: "Our flagship personalized experience. You are paired with a dedicated Master Coach who constructs every workout, monitors your neuromuscular recovery through HRV data, adjusts nutrition macros weekly, and provides relentless accountability.",
+    fullDesc: "Our premier personalized experience. You are paired with a dedicated Master Coach who constructs every workout, monitors your neuromuscular recovery through HRV data, adjusts nutrition macros weekly, and provides relentless accountability.",
     highlights: [
       "InBody 770 Dual-Frequency body composition analytics",
       "Daily HRV recovery tracking and adaptive workout intensity",

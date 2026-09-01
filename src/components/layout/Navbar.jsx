@@ -106,10 +106,10 @@ export default function Navbar({ onOpenMenu, onOpenTrial, onOpenCalculator }) {
           })}
         </nav>
 
-        {/* Right Actions: Sound Toggle, Calculator (Desktop), Join CTA (Desktop/Tablet), Hamburger Menu (All screens) */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          {/* Sound Toggle */}
-          <SoundToggle />
+        {/* Right Actions: Sound Toggle (Desktop), Mobile Join Button, Desktop Join CTA, Hamburger Menu */}
+        <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
+          {/* Sound Toggle (Hidden on mobile, floating on bottom-left instead) */}
+          <SoundToggle className="hidden md:flex" />
 
           {/* Fitness Calculator Trigger (Desktop only) */}
           <button
@@ -122,7 +122,18 @@ export default function Navbar({ onOpenMenu, onOpenTrial, onOpenCalculator }) {
             <span className="hidden xl:inline">1RM & MACROS</span>
           </button>
 
-          {/* Primary CTA (Desktop and Tablet only - Single instance, never duplicated) */}
+          {/* Mobile-Optimized Compact Responsive "JOIN NOW" Button */}
+          <button
+            onClick={onOpenTrial}
+            onMouseEnter={playHover}
+            aria-label="Join VIP Trial"
+            className="md:hidden flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-[#E2FF00] hover:bg-[#d4f000] text-black font-mono-tech text-[10px] font-black uppercase tracking-wider shadow-[0_0_12px_rgba(226,255,0,0.35)] active:scale-95 transition-all cursor-pointer"
+          >
+            <Sparkles className="w-3 h-3" />
+            <span>JOIN NOW</span>
+          </button>
+
+          {/* Desktop & Tablet Magnetic Join Button */}
           <MagneticButton
             onClick={onOpenTrial}
             variant="primary"
@@ -138,12 +149,12 @@ export default function Navbar({ onOpenMenu, onOpenTrial, onOpenCalculator }) {
             onClick={onOpenMenu}
             onMouseEnter={playHover}
             aria-label="Open Navigation Menu"
-            className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-zinc-900 hover:bg-zinc-800 border border-white/20 hover:border-[#E2FF00] text-white hover:text-[#E2FF00] shadow-[0_2px_12px_rgba(0,0,0,0.6)] active:scale-95 transition-all duration-300 cursor-pointer"
+            className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-zinc-900 hover:bg-zinc-800 border border-white/20 hover:border-[#E2FF00] text-white hover:text-[#E2FF00] shadow-[0_2px_12px_rgba(0,0,0,0.6)] active:scale-95 transition-all duration-300 cursor-pointer"
           >
-            <span className="text-xs font-mono-tech uppercase tracking-wider font-bold text-zinc-200">
+            <span className="text-[10px] sm:text-xs font-mono-tech uppercase tracking-wider font-bold text-zinc-200">
               MENU
             </span>
-            <Menu className="w-4 h-4 text-[#E2FF00]" />
+            <Menu className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E2FF00]" />
           </button>
         </div>
       </div>

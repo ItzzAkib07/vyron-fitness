@@ -55,8 +55,8 @@ export default function Contact({ onOpenTrial }) {
   return (
     <div className="pt-28 pb-20 bg-[#050505] text-white">
       <SEO
-        title="Contact & Flagship Location — VYRON Fitness"
-        description="Get in touch with the VYRON concierge team. Schedule a private tour or claim your 7-day all-access trial pass."
+        title="Contact & Location — VYRON Fitness (Baner, Pune)"
+        description="Get in touch with the VYRON concierge team. Schedule a private tour or claim your 7-day all-access trial pass in Baner, Pune."
         canonical="https://vyronfitness.com/contact"
       />
 
@@ -241,7 +241,7 @@ export default function Contact({ onOpenTrial }) {
                   LOCATION SPECIFICATIONS
                 </span>
                 <h3 className="font-display text-2xl font-black uppercase text-white tracking-tight">
-                  VYRON PUNE (BANER FLAGSHIP)
+                  VYRON PUNE (BANER)
                 </h3>
               </div>
 
@@ -250,7 +250,7 @@ export default function Contact({ onOpenTrial }) {
                   <MapPin className="w-5 h-5 text-[#E2FF00] shrink-0 mt-0.5" />
                   <div>
                     <span className="text-zinc-500 uppercase block text-[10px]">ADDRESS</span>
-                    <span>Apex Velocity Tower, Baner Road, Baner, Pune, MH 411045</span>
+                    <span>Apex Velocity Tower, Baner Road, Baner, Pune, Maharashtra 411045</span>
                   </div>
                 </div>
 

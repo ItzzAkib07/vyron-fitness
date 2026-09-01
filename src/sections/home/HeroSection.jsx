@@ -94,7 +94,7 @@ export default function HeroSection({ onOpenTrial, onOpenVideo }) {
             </div>
             <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-xs font-mono-tech">
               <MapPin className="w-3 h-3 text-[#00F0FF]" />
-              <span>Baner, Pune Flagship</span>
+              <span>Baner, Pune</span>
             </div>
           </div>
 

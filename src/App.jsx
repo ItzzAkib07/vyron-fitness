@@ -5,6 +5,7 @@ import { useLenis } from "./hooks/useLenis";
 // Common Layout & UI
 import CustomCursor from "./components/common/CustomCursor";
 import ScrollProgress from "./components/common/ScrollProgress";
+import FloatingSoundToggle from "./components/common/FloatingSoundToggle";
 import Navbar from "./components/layout/Navbar";
 import FullscreenMenu from "./components/layout/FullscreenMenu";
 import Footer from "./components/layout/Footer";
@@ -59,6 +60,9 @@ export default function App() {
 
       {/* Global Anime.js tactile shockwave & spark particle emitter */}
       <AnimeParticleBurst />
+
+      {/* Mobile Floating Sound Button on bottom left */}
+      <FloatingSoundToggle />
 
       {/* Sticky glassmorphic navbar */}
       <Navbar

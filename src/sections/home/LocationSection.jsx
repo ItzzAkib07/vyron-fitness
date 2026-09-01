@@ -22,7 +22,7 @@ export default function LocationSection({ onOpenTrial }) {
     <section ref={sectionRef} className="py-24 bg-[#080808] text-white relative overflow-hidden border-t border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          badge="FLAGSHIP HEADQUARTERS"
+          badge="CLUB LOCATION"
           title="VISIT OUR"
           accentWord="FACILITY."
           subtitle="Located in the heart of Baner's prime high-street and executive corridor, Pune, with dedicated underground valet parking and 24/7 security."
@@ -40,7 +40,7 @@ export default function LocationSection({ onOpenTrial }) {
             <div>
               <div className="flex items-center gap-2 text-xs font-mono-tech text-[#E2FF00] uppercase tracking-wider mb-3">
                 <Sparkles className="w-4 h-4" />
-                <span>STATE-OF-THE-ART FLAGSHIP</span>
+                <span>STATE-OF-THE-ART ATHLETIC CLUB</span>
               </div>
               <h3 className="font-display text-2xl sm:text-3xl font-black uppercase text-white tracking-tight mb-6">
                 VYRON PUNE (BANER)
@@ -51,7 +51,7 @@ export default function LocationSection({ onOpenTrial }) {
                   <MapPin className="w-5 h-5 text-[#E2FF00] shrink-0 mt-0.5" />
                   <div>
                     <span className="text-zinc-500 uppercase block text-[10px]">ADDRESS</span>
-                    <span>Apex Velocity Tower, Baner Road, Baner, Pune, MH 411045</span>
+                    <span>Apex Velocity Tower, Baner Road, Baner, Pune, Maharashtra 411045</span>
                   </div>
                 </div>
 
@@ -92,7 +92,7 @@ export default function LocationSection({ onOpenTrial }) {
 
             <div className="pt-6 mt-6 border-t border-zinc-800 flex flex-wrap gap-3">
               <MagneticButton
-                onClick={() => window.open("https://maps.google.com", "_blank")}
+                onClick={() => window.open("https://maps.google.com/?q=Baner,+Pune,+Maharashtra", "_blank")}
                 variant="primary"
                 size="md"
               >
@@ -105,43 +105,39 @@ export default function LocationSection({ onOpenTrial }) {
             </div>
           </motion.div>
 
-          {/* Right: High-tech Futuristic Visual Map with Parallax Scale & Floating HUD */}
+          {/* Right: Real Interactive Embedded Google Map with Dark Theme & Live HUD */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1] }}
-            className="lg:col-span-7 rounded-3xl overflow-hidden bg-zinc-900 border border-zinc-800 relative min-h-[380px] shadow-2xl flex items-center justify-center p-6"
+            className="lg:col-span-7 rounded-3xl overflow-hidden bg-zinc-950 border border-zinc-800 relative min-h-[440px] shadow-2xl flex flex-col group"
           >
-            <motion.img
-              style={{ scale: bgScale }}
-              src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=1200&auto=format&fit=crop"
-              alt="VYRON Architectural Facility"
-              className="absolute inset-0 w-full h-full object-cover opacity-35 will-change-transform"
+            {/* Embedded Google Maps for Baner, Pune */}
+            <iframe
+              src="https://maps.google.com/maps?q=Baner,+Pune,+Maharashtra&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              className="w-full h-full min-h-[440px] rounded-3xl border-0 filter invert-[0.88] hue-rotate-[180deg] contrast-[1.25] opacity-85 group-hover:opacity-100 transition-opacity"
+              allowFullScreen=""
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="VYRON Location - Baner, Pune"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30" />
 
-            {/* Futuristic Map Overlay HUD with Floating Parallax */}
+            {/* Futuristic Live Telemetry Overlay Badge */}
             <motion.div
               style={{ y: hudY }}
-              className="relative z-10 p-6 rounded-2xl bg-black/85 backdrop-blur-xl border border-[#E2FF00]/40 max-w-md text-center shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_30px_rgba(226,255,0,0.15)] will-change-transform"
+              className="absolute top-4 right-4 p-4 rounded-2xl bg-black/90 backdrop-blur-xl border border-[#E2FF00]/40 text-left shadow-[0_10px_30px_rgba(0,0,0,0.8),0_0_20px_rgba(226,255,0,0.15)] max-w-xs pointer-events-none will-change-transform z-10"
             >
-              <div className="w-14 h-14 rounded-full bg-[#E2FF00]/15 border border-[#E2FF00] flex items-center justify-center mx-auto mb-3 text-[#E2FF00]">
-                <MapPin className="w-7 h-7" />
+              <div className="flex items-center gap-2 text-[11px] font-mono-tech uppercase tracking-widest text-[#E2FF00] font-bold mb-1">
+                <MapPin className="w-3.5 h-3.5 text-[#E2FF00]" />
+                <span>Baner, Pune</span>
               </div>
-              <span className="text-[10px] font-mono-tech uppercase tracking-widest text-[#E2FF00] font-bold block mb-1">
-                GPS COORDINATES
-              </span>
-              <div className="font-mono-tech text-xl font-bold text-white mb-2">
-                18.5590° N, 73.7868° E
+              <div className="font-mono-tech text-xs text-zinc-300">
+                Apex Velocity Tower, Baner Road, Pune
               </div>
-              <p className="text-xs text-zinc-300 mb-4">
-                Flagship facility is located on Baner Road, near Balewadi High Street junction.
-              </p>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00F0FF]/15 text-[#00F0FF] text-xs font-mono-tech">
-                <span className="w-2 h-2 rounded-full bg-[#00F0FF] animate-ping" />
-                <span>Live Valet Bay Status: Open (48 Spots)</span>
+              <div className="mt-2.5 inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#00F0FF]/15 text-[#00F0FF] text-[10px] font-mono-tech">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
+                <span>Live Valet Bay: Open (48 Spots)</span>
               </div>
             </motion.div>
           </motion.div>
