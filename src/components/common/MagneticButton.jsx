@@ -63,7 +63,7 @@ export default function MagneticButton({
       onMouseLeave={handleMouseLeave}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 250, damping: 18, mass: 0.1 }}
-      className={`inline-block ${wrapperClassName}`}
+      className={wrapperClassName ? wrapperClassName : "inline-block"}
     >
       <Component
         onMouseEnter={playHover}

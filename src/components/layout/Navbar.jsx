@@ -122,27 +122,16 @@ export default function Navbar({ onOpenMenu, onOpenTrial, onOpenCalculator }) {
             <span className="hidden xl:inline">1RM & MACROS</span>
           </button>
 
-          {/* Mobile-Optimized Compact Responsive "JOIN NOW" Button */}
+          {/* Single Unified Responsive "JOIN NOW" CTA Button */}
           <button
             onClick={onOpenTrial}
             onMouseEnter={playHover}
             aria-label="Join VIP Trial"
-            className="md:hidden flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-[#E2FF00] hover:bg-[#d4f000] text-black font-mono-tech text-[10px] font-black uppercase tracking-wider shadow-[0_0_12px_rgba(226,255,0,0.35)] active:scale-95 transition-all cursor-pointer"
+            className="flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#E2FF00] hover:bg-[#d4f000] text-black font-mono-tech text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-[0_0_12px_rgba(226,255,0,0.35)] hover:shadow-[0_0_20px_rgba(226,255,0,0.5)] active:scale-95 transition-all duration-300 cursor-pointer shrink-0"
           >
-            <Sparkles className="w-3 h-3" />
+            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             <span>JOIN NOW</span>
           </button>
-
-          {/* Desktop & Tablet Magnetic Join Button */}
-          <MagneticButton
-            onClick={onOpenTrial}
-            variant="primary"
-            size="sm"
-            wrapperClassName="hidden md:inline-block"
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>JOIN NOW</span>
-          </MagneticButton>
 
           {/* High-Tech Hamburger Menu Button (Always visible on Mobile, Tablet & Desktop) */}
           <button
