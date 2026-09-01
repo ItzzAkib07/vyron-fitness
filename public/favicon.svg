@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect width="100" height="100" rx="24" fill="#0A0A0A" />
+  <path d="M22 26L42 74H58L78 26H62L50 58L38 26H22Z" fill="url(#voltGrad)" />
+  <circle cx="50" cy="50" r="46" stroke="#E2FF00" stroke-width="2" stroke-opacity="0.3" stroke-dasharray="6 6"/>
+  <defs>
+    <linearGradient id="voltGrad" x1="22" y1="26" x2="78" y2="74" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00F0FF" />
+      <stop offset="0.5" stop-color="#E2FF00" />
+      <stop offset="1" stop-color="#99FF00" />
+    </linearGradient>
+  </defs>
+</svg>
